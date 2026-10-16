@@ -46,7 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="th"
       className={`${prompt.variable} ${sarabun.variable} ${cormorant.variable} h-full antialiased`}
     >
-      <body className="bg-glow relative min-h-full flex flex-col font-sans">
+      <body className="page-glow relative min-h-full flex flex-col font-sans">
         {children}
       </body>
     </html>

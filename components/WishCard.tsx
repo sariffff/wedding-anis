@@ -25,7 +25,7 @@ export default function WishCard({ wish, index = 0 }: { wish: Wish; index?: numb
     >
       <header className="flex items-center gap-3">
         <div
-          className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-linear-to-br ${gradient} font-heading text-lg font-medium text-white shadow-sm`}
+          className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-linear-to-br ${gradient} font-sans text-lg font-semibold text-white shadow-sm`}
           aria-hidden="true"
         >
           {initial}

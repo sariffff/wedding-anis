@@ -69,7 +69,20 @@ body {
   line-height: 1.6;
 }
 
-/* Soft noise-free glow background */
+/* Page background: glow on a fixed layer so it never tiles/seams on long pages */
+.page-glow::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 40% at 15% 0%, rgb(238 195 205 / 0.75), transparent 70%),
+    radial-gradient(50% 35% at 100% 20%, rgb(201 168 106 / 0.18), transparent 70%),
+    radial-gradient(70% 45% at 50% 100%, rgb(217 160 184 / 0.35), transparent 70%);
+}
+
+/* Contained glow for boxed layouts (poster) */
 .bg-glow {
   background:
     radial-gradient(60% 40% at 15% 0%, rgb(238 195 205 / 0.75), transparent 70%),
