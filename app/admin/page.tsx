@@ -13,6 +13,14 @@ export const metadata: Metadata = {
 async function AllWishes() {
   await connection();
 
+  if (!process.env.SUPABASE_SECRET_KEY) {
+    return (
+      <p className="glass rounded-3xl p-6 text-center text-rose-deep">
+        ยังไม่ได้ตั้งค่า SUPABASE_SECRET_KEY
+      </p>
+    );
+  }
+
   const { data, error } = await getAdminSupabase()
     .from("wishes")
     .select("id, name, relation, message, photo_urls, created_at")
